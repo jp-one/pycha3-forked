@@ -18,9 +18,9 @@
 import copy
 import inspect
 import math
-from functools import reduce
 
 import cairo
+from six.moves import reduce
 
 from pycha.color import ColorScheme, hex2rgb, DEFAULT_COLOR
 from pycha.utils import safe_unicode
@@ -173,8 +173,8 @@ class Chart(object):
             xdata = [pair[0] for pair in reduce(lambda a, b: a+b, stores)]
             self.minxval = float(min(xdata))
             self.maxxval = float(max(xdata))
-            # if self.minxval * self.maxxval > 0 and self.minxval > 0:
-            #    self.minxval = 0.0
+            if self.minxval * self.maxxval > 0 and self.minxval > 0:
+                self.minxval = 0.0
 
         self.xrange = self.maxxval - self.minxval
         if self.xrange == 0:
@@ -590,7 +590,7 @@ class Chart(object):
 
         def drawKey(key, x, y, text_height):
             cx.rectangle(x, y, bullet, bullet)
-            cx.set_source_rgb(*self.colorScheme.colors[key])
+            cx.set_source_rgb(*self.colorScheme[key])
             cx.fill_preserve()
             cx.set_source_rgb(0, 0, 0)
             cx.stroke()

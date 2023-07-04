@@ -16,6 +16,11 @@
 # You should have received a copy of the GNU Lesser General Public License
 # along with PyCha.  If not, see <http://www.gnu.org/licenses/>.
 
+import six
+
+unicode = six.text_type
+
+
 def clamp(minValue, maxValue, value):
     """Make sure value is between minValue and maxValue"""
     if value < minValue:
@@ -26,14 +31,14 @@ def clamp(minValue, maxValue, value):
 
 
 def safe_unicode(obj, encoding=None):
-#    """Return a unicode value from the argument"""
-#    if isinstance(obj, unicode):
-#        return obj
-#    elif isinstance(obj, str):
-#        if encoding is None:
-#            return str(obj)
-#        else:
-#            return str(obj, encoding)
-#    else:
-#        # it may be an int or a float
-        return str(obj)
+    """Return a unicode value from the argument"""
+    if isinstance(obj, unicode):
+        return obj
+    elif isinstance(obj, str):
+        if encoding is None:
+            return unicode(obj)
+        else:
+            return unicode(obj, encoding)
+    else:
+        # it may be an int or a float
+        return unicode(obj)

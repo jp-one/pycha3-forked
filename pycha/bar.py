@@ -81,7 +81,7 @@ class BarChart(Chart):
             if self.options.shouldFill or (not self.options.stroke.hide):
 
                 if self.options.shouldFill:
-                    cx.set_source_rgb(0.2, 0.23, 0.9)
+                    cx.set_source_rgb(*self.colorScheme[bar.name])
                     cx.rectangle(x, y, w, h)
                     cx.fill()
 

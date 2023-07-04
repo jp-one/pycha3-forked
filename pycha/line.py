@@ -80,7 +80,7 @@ class LineChart(Chart):
                 cx.line_to(self.layout.chart.x, y)
                 cx.close_path()
             else:
-                cx.set_source_rgb(*self.colorScheme.colors[storeName])
+                cx.set_source_rgb(*self.colorScheme[storeName])
                 cx.stroke()
 
 
@@ -99,7 +99,7 @@ class LineChart(Chart):
                     cx.restore()
 
                 # fill the line
-                cx.set_source_rgb(*self.colorScheme.colors[storeName])
+                cx.set_source_rgb(*self.colorScheme[storeName])
                 preparePath(storeName)
                 cx.fill()
 
