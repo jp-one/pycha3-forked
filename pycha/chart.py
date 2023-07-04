@@ -17,6 +17,11 @@
 
 import copy
 import inspect
+
+# hotpatch for python 3.11 support while preserving backwards compatibility for python3 < 3.10
+if not hasattr("inspect", "getargspec"):
+    inspect.getargspec = inspect.getfullargspec
+
 import math
 
 import cairo
