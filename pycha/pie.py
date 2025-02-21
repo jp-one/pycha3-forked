@@ -1,4 +1,4 @@
-# Copyright(c) 2007-2010 by Lorenzo Gil Sanchez <lorenzo.gil.sanchez@gmail.com>
+# Copyright(c) 2007-2019 by Lorenzo Gil Sanchez <lorenzo.gil.sanchez@gmail.com>
 #
 # This file is part of PyCha.
 #
@@ -17,7 +17,7 @@
 
 import math
 
-import cairo
+import cairocffi as cairo
 
 from pycha.chart import Chart, Option, Layout, Area, get_text_extents
 from pycha.color import hex2rgb
@@ -208,7 +208,7 @@ class PieLayout(Layout):
         self._areas = (
             (self.title, (1, 126 / 255.0, 0)),  # orange
             (self.chart, (75 / 255.0, 75 / 255.0, 1.0)),  # blue
-            )
+        )
 
         self._lines = []
 
@@ -227,8 +227,9 @@ class PieLayout(Layout):
         self.chart.x = self.title.x
         self.chart.y = self.title.y + self.title.h
         self.chart.w = self.title.w
-        self.chart.h = height - self.title.h - (options.padding.top
-                                                + options.padding.bottom)
+        self.chart.h = height - self.title.h - (
+            options.padding.top + options.padding.bottom
+        )
 
         centerx = self.chart.x + self.chart.w * 0.5
         centery = self.chart.y + self.chart.h * 0.5

@@ -1,4 +1,4 @@
-# Copyright(c) 2007-2012 by Lorenzo Gil Sanchez <lorenzo.gil.sanchez@gmail.com>
+# Copyright(c) 2019 by Lorenzo Gil Sanchez <lorenzo.gil.sanchez@gmail.com>
 #
 # This file is part of PyCha.
 #
@@ -15,4 +15,13 @@
 # You should have received a copy of the GNU Lesser General Public License
 # along with PyCha.  If not, see <http://www.gnu.org/licenses/>.
 
-version = "0.8.1"
+import sys
+
+# True if we are running on Python 3.
+PY3 = sys.version_info[0] == 3
+
+
+if PY3:  # pragma: no cover
+    from inspect import getfullargspec  # noqa
+else:  # pragma: no cover
+    from inspect import getargspec as getfullargspec  # noqa

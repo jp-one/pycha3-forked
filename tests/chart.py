@@ -1,4 +1,4 @@
-# Copyright(c) 2007-2010 by Lorenzo Gil Sanchez <lorenzo.gil.sanchez@gmail.com>
+# Copyright(c) 2007-2019 by Lorenzo Gil Sanchez <lorenzo.gil.sanchez@gmail.com>
 #
 # This file is part of PyCha.
 #
@@ -17,7 +17,7 @@
 
 import unittest
 
-import cairo
+import cairocffi as cairo
 
 import pycha.chart
 
@@ -35,7 +35,7 @@ class FunctionsTests(unittest.TestCase):
         self.assertEqual(pycha.chart.uniqueIndices(arr), range(4))
 
         arr = (range(0), )
-        self.assertEqual(pycha.chart.uniqueIndices(arr), [])
+        self.assertEqual(pycha.chart.uniqueIndices(arr), range(0))
 
 
 class AreaTests(unittest.TestCase):
@@ -138,7 +138,7 @@ class ChartTests(unittest.TestCase):
         dataset = (('dataset1', ([0, 1], [1, 1])), )
         ch.addDataset(dataset)
         ch._setColorscheme()
-        self.assert_(isinstance(ch.colorScheme, dict))
+        self.assertTrue(isinstance(ch.colorScheme, dict))
         self.assertEqual(ch.colorScheme, {'dataset1': (0.0, 0.0, 0.0)})
 
         options = {'colorScheme': {'name': 'foo'}}

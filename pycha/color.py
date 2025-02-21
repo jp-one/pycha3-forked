@@ -1,4 +1,4 @@
-# Copyright(c) 2007-2010 by Lorenzo Gil Sanchez <lorenzo.gil.sanchez@gmail.com>
+# Copyright(c) 2007-2019 by Lorenzo Gil Sanchez <lorenzo.gil.sanchez@gmail.com>
 #              2009 by Yaco S.L. <lgs@yaco.es>
 #
 # This file is part of PyCha.
@@ -18,6 +18,8 @@
 
 import math
 
+import six
+
 from pycha.utils import clamp
 
 
@@ -36,9 +38,9 @@ def hex2rgb(hexstring, digits=2):
         return hexstring
 
     top = float(int(digits * 'f', 16))
-    r = int(hexstring[1:digits+1], 16)
-    g = int(hexstring[digits+1:digits*2+1], 16)
-    b = int(hexstring[digits*2+1:digits*3+1], 16)
+    r = int(hexstring[1:digits + 1], 16)
+    g = int(hexstring[digits + 1:digits * 2 + 1], 16)
+    b = int(hexstring[digits * 2 + 1:digits * 3 + 1], 16)
     return r / top, g / top, b / top
 
 
@@ -111,7 +113,7 @@ basicColors = dict(
     grey='#444444',
     black='#000000',
     darkcyan='#305755',
-    )
+)
 
 
 class ColorSchemeMetaclass(type):
@@ -123,11 +125,10 @@ class ColorSchemeMetaclass(type):
         return klass
 
 
-class ColorScheme(dict):
+class ColorScheme(six.with_metaclass(ColorSchemeMetaclass, dict)):
     """A color scheme is a dictionary where the keys match the keys
     constructor argument and the values are colors"""
 
-    __metaclass__ = ColorSchemeMetaclass
     __registry__ = {}
 
     def __init__(self, keys):
