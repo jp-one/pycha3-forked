@@ -1,4 +1,4 @@
-# Copyright(c) 2007-2010 by Lorenzo Gil Sanchez <lorenzo.gil.sanchez@gmail.com>
+# Copyright(c) 2007-2019 by Lorenzo Gil Sanchez <lorenzo.gil.sanchez@gmail.com>
 #
 # This file is part of PyCha.
 #
@@ -139,7 +139,7 @@ class ChartTests(unittest.TestCase):
         dataset = (('dataset1', ([0, 1], [1, 1])), )
         ch.addDataset(dataset)
         ch._setColorscheme()
-        self.assert_(isinstance(ch.colorScheme, dict))
+        self.assertTrue(isinstance(ch.colorScheme, dict))
         self.assertEqual(ch.colorScheme, {'dataset1': (0.0, 0.0, 0.0)})
 
         options = {'colorScheme': {'name': 'foo'}}

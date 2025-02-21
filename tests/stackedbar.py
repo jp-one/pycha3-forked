@@ -1,4 +1,5 @@
 # Copyright (c) 2009-2010 by Yaco S.L. <lgs@yaco.es>
+#               2019 by Lorenzo Gil Sanchez <lorenzo.gil.sanchez@gmail.com>
 #
 # This file is part of PyCha.
 #
