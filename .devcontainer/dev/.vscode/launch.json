@@ -1,0 +1,57 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information visit:
+    // https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "tests-runner",
+            "type": "debugpy",
+            "request": "launch",
+            "cwd": "${workspaceFolder}/code/tests",
+            "program": "runner.py",
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "examples-barchart.py",
+            "type": "debugpy",
+            "request": "launch",
+            "cwd": "${workspaceFolder}/code/examples",
+            "program": "barchart.py",
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "examples-piechart.py",
+            "type": "debugpy",
+            "request": "launch",
+            "cwd": "${workspaceFolder}/code/examples",
+            "program": "piechart.py",
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "examples-linechart.py",
+            "type": "debugpy",
+            "request": "launch",
+            "cwd": "${workspaceFolder}/code/examples",
+            "program": "linechart.py",
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "examples-svg.py",
+            "type": "debugpy",
+            "request": "launch",
+            "cwd": "${workspaceFolder}/code/examples",
+            "program": "svg.py",
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "examples-test.py",
+            "type": "debugpy",
+            "request": "launch",
+            "cwd": "${workspaceFolder}/code/examples",
+            "program": "test.py",
+            "console": "integratedTerminal"
+        },
+    ]
+}
