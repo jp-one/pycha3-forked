@@ -17,7 +17,7 @@
 
 import unittest
 
-import cairocffi as cairo
+import cairo
 
 import pycha.chart
 

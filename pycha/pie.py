@@ -17,7 +17,7 @@
 
 import math
 
-import cairocffi as cairo
+import cairo
 
 from pycha.chart import Chart, Option, Layout, Area, get_text_extents
 from pycha.color import hex2rgb
