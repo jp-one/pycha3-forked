@@ -38,6 +38,22 @@
             "console": "integratedTerminal"
         },
         {
+            "name": "examples-draw.py",
+            "type": "debugpy",
+            "request": "launch",
+            "cwd": "${workspaceFolder}/code/examples",
+            "program": "draw.py",
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "examples-rotate.py",
+            "type": "debugpy",
+            "request": "launch",
+            "cwd": "${workspaceFolder}/code/examples",
+            "program": "rotate.py",
+            "console": "integratedTerminal"
+        },
+        {
             "name": "examples-svg.py",
             "type": "debugpy",
             "request": "launch",

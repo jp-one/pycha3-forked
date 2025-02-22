@@ -16,3 +16,12 @@
 # along with PyCha.  If not, see <http://www.gnu.org/licenses/>.
 
 version = "0.8.1"
+
+__credits__ = [
+    "Lorenzo Gil Sanchez <lorenzo.gil.sanchez@gmail.com>",
+    "Roberto Garcia Carvajal <roberpot@gmail.com>",
+    "Yaco S.L. <lgs@yaco.es>",
+    "bill fletcher <https://github.com/bfletcher>",
+    "Bona Fide IT GmbH <https://github.com/BonaFideIT>",
+    "jp-one <https://github.com/jp-one>",
+]

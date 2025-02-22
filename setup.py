@@ -27,7 +27,7 @@ def read(*rnames):
 
 base_requirements = [
     'six',
-    'cairocffi',
+    'pycairo',
 ]
 
 testing_requirements = [

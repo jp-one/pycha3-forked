@@ -1,6 +1,12 @@
 pytest
 pytest-cov
 
+coverage
+mccabe
+pep8
+pyflakes
+flake8
+
 sphinx
 
 six
