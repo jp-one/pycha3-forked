@@ -18,7 +18,7 @@
 import os
 from setuptools import setup
 
-from pycha import version
+from pycha import version as pkg_version, __credits__ as pkg_credits
 
 
 def read(*rnames):
@@ -41,11 +41,11 @@ testing_requirements = [
 
 setup(
     name="pycha",
-    version=version,
+    version=pkg_version,
     author="Lorenzo Gil Sanchez",
     author_email="lorenzo.gil.sanchez@gmail.com",
     description="A library for making charts with Python",
-    long_description=(read('README.txt') + '\n\n' + read('CHANGES.txt')),
+    long_description="\n\n".join([read('README.txt'), read('CHANGES.txt'), "Credits\n=======\n\n- " + "\n- ".join(pkg_credits)]),
     license="LGPL 3",
     keywords="chart cairo",
     packages=['pycha', 'chavier'],
