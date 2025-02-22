@@ -1,4 +1,4 @@
-# Copyright (c) 2007-2019 by Lorenzo Gil Sanchez <lorenzo.gil.sanchez@gmail.com>
+# Copyright(c) 2019 by Lorenzo Gil Sanchez <lorenzo.gil.sanchez@gmail.com>
 #
 # This file is part of PyCha.
 #
@@ -15,26 +15,13 @@
 # You should have received a copy of the GNU Lesser General Public License
 # along with PyCha.  If not, see <http://www.gnu.org/licenses/>.
 
-import unittest
+import sys
 
-import bar
-import chart
-import color
-import line
-import pie
-import utils
+# True if we are running on Python 3.
+PY3 = sys.version_info[0] == 3
 
 
-def test_suite():
-    return unittest.TestSuite((
-        bar.test_suite(),
-        chart.test_suite(),
-        color.test_suite(),
-        line.test_suite(),
-        pie.test_suite(),
-        utils.test_suite(),
-    ))
-
-
-if __name__ == '__main__':
-    unittest.main(defaultTest='test_suite')
+if PY3:  # pragma: no cover
+    from inspect import getfullargspec  # noqa
+else:  # pragma: no cover
+    from inspect import getargspec as getfullargspec  # noqa
