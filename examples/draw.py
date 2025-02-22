@@ -176,7 +176,7 @@ class TextExtents(Diagram):
         cr.move_to(x, y)
         cr.rel_line_to(xbearing, ybearing)
         cr.stroke()
-        print xbearing, ybearing
+        print(xbearing, ybearing)
 
         # text's advance
         cr.set_source_rgba(0, 0, 0.75, 0.5)
